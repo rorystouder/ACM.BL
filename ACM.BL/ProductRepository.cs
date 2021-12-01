@@ -1,4 +1,6 @@
-﻿namespace ACM.BL
+﻿using System;
+
+namespace ACM.BL
 {
 	public class ProductRepository
 	{
@@ -6,7 +8,7 @@
 		/// Retrieve one product.
 		/// </summary>
 		///
-		public Product Retrieve(int productId)
+		public static Product Retrieve(int productId)
 		{
 			// Create the instance of the Product class
 			// Pass in the requested Id
@@ -29,8 +31,13 @@
 		/// Save the current product.
 		/// </summary>
 		/// 
-		public bool Save(Product product)
+		public static bool Save(Product product)
 		{
+			if (product is null)
+			{
+				throw new ArgumentNullException(nameof(product));
+			}
+
 			return true;
 		}
 	}

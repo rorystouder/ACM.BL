@@ -1,6 +1,6 @@
 ﻿namespace ACM.BL
 {
-	class Address
+	public class Address
 	{
 		public Address()
 		{
@@ -11,7 +11,7 @@
 			AddressId = addressID;
 		}
 
-		public int AddressId { get; private set; }
+		public int AddressId { get; set; }
 		public int AddressType { get; set; }
 		public string StreetLineOne { get; set; }
 		public string StreetLineTwo { get; set; }

@@ -7,11 +7,11 @@ namespace ACM.BL
 		/// <summary>
 		/// Retrieve one order.
 		/// </summary>
-		public Order Retrieve(int orderId)
+		public static Order Retrieve(int orderId)
 		{
 			// Create the instance of the order class
 			// Pass in the requested Id
-			Order order = new Order(orderId);
+			Order order = new(orderId);
 
 			// Code that retrieves the defiened order
 
@@ -29,8 +29,12 @@ namespace ACM.BL
 		/// <summary>
 		/// Saves the current order.
 		/// </summary>
-		public bool Save(Order order)
+		public static bool Save(Order order)
 		{
+			if (order is null)
+			{
+				throw new ArgumentNullException(nameof(order));
+			}
 			// Code that saves the passed in order
 
 			return true;

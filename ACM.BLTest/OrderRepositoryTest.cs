@@ -19,7 +19,7 @@ namespace ACM.BLTest
 			};
 
 			// - Act
-			var actual = orderRepository.Retrieve(10);
+			var actual = OrderRepository.Retrieve(10);
 
 			// - Assert
 			Assert.AreEqual(expected.OrderDate, actual.OrderDate);

@@ -19,7 +19,7 @@ namespace ACM.BLTest
 			};
 
 			// - Act
-			var actual = productRepository.Retrieve(2);
+			var actual = ProductRepository.Retrieve(2);
 
 			// - Assert
 			Assert.AreEqual(expected.CurrentPrice, actual.CurrentPrice);
