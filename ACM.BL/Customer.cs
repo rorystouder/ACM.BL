@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ACM.BL
 {
@@ -53,6 +52,8 @@ namespace ACM.BL
 				_lastName = value;
 			}
 		}
+
+		public override string ToString() => FullName;
 
 		/// <summary>
 		/// Validates the customer data.

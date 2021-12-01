@@ -24,6 +24,9 @@ namespace ACM.BL
 				product.ProductDescription = "To Rule Them All";
 				product.CurrentPrice = 1000000000000.00M;
 			}
+			Object myObject = new object();
+			Console.WriteLine($"Object: {myObject.ToString()}");
+			Console.WriteLine($"Product: {product.ToString()}");
 			return product;
 		}
 
