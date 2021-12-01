@@ -34,14 +34,29 @@ namespace ACM.BL
 		/// Save the current product.
 		/// </summary>
 		/// 
-		public static bool Save(Product product)
+		public bool Save(Product product)
 		{
-			if (product is null)
-			{
-				throw new ArgumentNullException(nameof(product));
-			}
+			var success = true;
 
-			return true;
+			if (product.HasChanges)
+			{
+				if (product.IsValid)
+				{
+					if (product.IsNew)
+					{
+						// Call an Insert Stored Procedure
+					}
+					else
+					{
+						// Call an Update Stored Procedure
+					}
+				}
+				else
+				{
+					success = false;
+				}
+			}
+			return success;
 		}
 	}
 }

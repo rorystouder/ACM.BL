@@ -31,13 +31,27 @@ namespace ACM.BL
 		/// </summary>
 		public static bool Save(Order order)
 		{
-			if (order is null)
-			{
-				throw new ArgumentNullException(nameof(order));
-			}
-			// Code that saves the passed in order
+			var success = true;
 
-			return true;
+			if (order.HasChanges)
+			{
+				if (order.IsValid)
+				{
+					if (order.IsNew)
+					{
+						// Call an Insert Stored Procedure
+					}
+					else
+					{
+						// Call an Update Stored Procedure
+					}
+				}
+				else
+				{
+					success = false;
+				}
+			}
+			return success;
 		}
 	}
 }

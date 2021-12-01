@@ -40,13 +40,27 @@ namespace ACM.BL
 		/// 
 		public static bool Save(Customer customer)
 		{
-			if (customer is null)
-			{
-				throw new ArgumentNullException(nameof(customer));
-			}
-			// Code that saves the passed in customer
+			var success = true;
 
-			return true;
+			if (customer.HasChanges)
+			{
+				if (customer.IsValid)
+				{
+					if (customer.IsNew)
+					{
+						// Call an Insert Stored Procedure
+					}
+					else
+					{
+						// Call an Update Stored Procedure
+					}
+				}
+				else
+				{
+					success = false;
+				}
+			}
+			return success;
 		}
 	}
 }

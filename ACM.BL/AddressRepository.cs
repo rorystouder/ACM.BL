@@ -72,12 +72,27 @@ namespace ACM.BL
 		/// 
 		public static bool Save(Address address)
 		{
-			if (address is null)
-			{
-				throw new ArgumentNullException(nameof(address));
-			}
+			var success = true;
 
-			return true;
+			if (address.HasChanges)
+			{
+				if (address.IsValid)
+				{
+					if (address.IsNew)
+					{
+						// Call an Insert Stored Procedure
+					}
+					else
+					{
+						// Call an Update Stored Procedure
+					}
+				}
+				else
+				{
+					success = false;
+				}
+			}
+			return success;
 		}
 	}
 }
