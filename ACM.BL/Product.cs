@@ -1,6 +1,6 @@
 ﻿namespace ACM.BL
 {
-	class Product
+	public class Product
 	{
 		public Product()
 		{
@@ -15,28 +15,6 @@
 		public string ProductDescription { get; set; }
 		public int ProductId { get; set; }
 		public string ProductName { get; set; }
-
-		/// <summary>
-		/// Retrieve one product.
-		/// </summary>
-		///
-		public Product Retrieve(int productId)
-		{
-			// Code that retrieves the defined product
-
-			return new Product();
-		}
-		
-		/// <summary>
-		/// Saves the product.
-		/// </summary>
-		///
-		public bool Save()
-		{
-			// Code that saves the defined product
-
-			return true;
-		}
 
 		/// <summary>
 		/// Validates the product data.
