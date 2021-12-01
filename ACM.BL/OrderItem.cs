@@ -8,10 +8,21 @@
 		}
 		public OrderItem(int orderItemId)
 		{
-			OrderItem = orderItemId;
+			SetOrderItem(orderItemId);
 		}
 
-		public int OrderItem { get; private set; }
+		private int orderItem;
+
+		public int GetOrderItem()
+		{
+			return orderItem;
+		}
+
+		private void SetOrderItem(int value)
+		{
+			orderItem = value;
+		}
+
 		public int ProductId { get; set;}
 		public decimal? PurchasePrice { get; set; }
 		public int Quantity { get; set; }
@@ -20,7 +31,7 @@
 		/// Retrieve one order item.
 		/// </summary>
 		/// 
-		public OrderItem Retrieve(int orderItemId)
+		public static OrderItem Retrieve(int orderItemId)
 		{
 			// Code that retrieves the defined order item
 
@@ -31,7 +42,7 @@
 		/// Saves the current order item
 		/// </summary>
 		/// 
-		public bool Save()
+		public static bool Save()
 		{
 			// Code that saves the defined order item
 
